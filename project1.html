@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <h1>File in your information</h1>
+</head>
+
+<body>
+<fieldset>
+    <legend>Form</legend>
+    <label for="name">First name:</label><br>
+    <input type="text" id="name" name="name" required><br>
+
+    <label for="name">Last name:</label><br>
+    <input type="text" id="name" name="name" required><br>
+
+    <label for="email">Email:</label><br>
+    <input type="email" id="email" name="email" required><br><br>
+
+<h4>Your Gender</h4>
+<input type="radio" id="male" name="gender" value="male">
+<label for="male">Male</label>
+<input type="radio" id="female" name="gender" value="female">
+<label for="female">Female</label><br><br>
+<h4>Favorite Subjects</h4>
+
+<input type="checkbox" id="agree" name="agree" required>
+            <label for="agree">C++</label>
+            <input type="checkbox" id="agree" name="agree" required>
+            <label for="agree">Java</label>
+            <input type="checkbox" id="agree" name="agree" required>
+            <label for="agree">C#</label>
+            <input type="checkbox" id="agree" name="agree" required>
+            <label for="agree">PHP</label>
+            <input type="checkbox" id="agree" name="agree" required>
+            <label for="agree">SQL</label><br>
+            <h4>Your City</h4>
+            <label>City</label>
+            <select id="city" name="city" required>
+                <option value="Irbid">Irbid</option>
+                <option value="Amman">Amman</option>
+                <option value="Jarash">Jarash</option>
+                <option value="Mafraq">Mafraq</option>
+                <option value="Ajloune">Ajloune</option>
+                <option value="others">others</option>
+            </select><br><br>
+        
+        <label for="image">Upload Image:</label>
+        <input type="file" id="image" name="image" accept="image/*"><br><br><br>
+
+       <label>Write About Yourself:</label><br><br>
+       <textarea id="about" name="about" rows="6" cols="50" placeholder="Write here"></textarea><br><br>
+       <input type="submit">
+</fieldset>
+</body>
+</html>
