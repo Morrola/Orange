@@ -1,0 +1,65 @@
+// 3- You should allow the user to enter a password. When it is too short, it should indicate that it is too short in red, as shown. When the password does not match the confirmation, it should indicate that they do not match.
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Validation</title>
+    <style>
+        .error {
+            color: red;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+
+    <form id="passwordForm">
+        <label for="password">Password (min 6 characters): </label>
+        <input type="password" id="password" required>
+        <span id="passwordError" class="error"></span>
+        <br><br>
+
+        <label for="confirmPassword">Repeat password: </label>
+        <input type="password" id="confirmPassword" required>
+        <span id="confirmError" class="error"></span>
+        <br><br>
+
+        <button type="submit">Submit</button>
+    </form>
+
+    <script>
+        const passwordInput = document.getElementById('password');
+        const confirmPasswordInput = document.getElementById('confirmPassword');
+        const passwordError = document.getElementById('passwordError');
+        const confirmError = document.getElementById('confirmError');
+
+        document.getElementById('passwordForm').addEventListener('submit', function(event) {
+            let valid = true;
+
+            // Check password length
+            if (passwordInput.value.length < 6) {
+                passwordError.textContent = 'Too short';
+                valid = false;
+            } else {
+                passwordError.textContent = '';
+            }
+
+            // Check if passwords match
+            if (passwordInput.value !== confirmPasswordInput.value) {
+                confirmError.textContent = "The two passwords don't match";
+                valid = false;
+            } else {
+                confirmError.textContent = '';
+            }
+
+            // Prevent form submission if validation fails
+            if (!valid) {
+                event.preventDefault();
+            }
+        });
+    </script>
+
+</body>
+</html>
