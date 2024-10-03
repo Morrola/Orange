@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="form2.css">
+    <title>Registration and Login</title>
+</head>
+<body>
+
+    
+    <div id="registration" class="form-box">
+        <h2>Registration</h2>
+        <div class="input-group">
+            <label for="firstname">First Name</label>
+            <input type="text" id="firstname" placeholder="Enter Your First Name" required>
+            <label for="lastname">Last Name</label>
+            <input type="text" id="lastname" placeholder="Enter Your Last Name" required>
+            <label for="email">Email</label>
+            <input type="email" id="email" placeholder="Enter Your Email" required>
+            <label for="password">Password</label>
+            <input type="password" id="password" placeholder="Enter Your Password" required>
+            <button id="register-btn" onclick="registerUser()">Register</button>
+        </div>
+        <div id="error-message" class="error-message">Please fill out all fields.</div>
+        <div id="success-message" class="success-message">User registered successfully!</div>
+    </div>
+
+    
+    <div id="login" class="form-box" style="display:none;">
+        <h2>Login</h2>
+        <div class="input-group">
+            <label for="login-email">Email</label>
+            <input type="email" id="login-email" placeholder="Enter Your Email" required>
+            <label for="login-password">Password</label>
+            <input type="password" id="login-password" placeholder="Enter Your Password" required>
+            <button id="login-btn" onclick="loginUser()">Login</button>
+        </div>
+        <div id="login-error-message" class="error-message">Invalid email or password.</div>
+    </div>
+
+    
+    <div id="welcome" class="form-box" style="display:none;">
+        <h2>Welcome to the Dashboard</h2>
+        <p>You have successfully logged in!</p>
+    </div>
+
+    <script src="form2.js"></script>
+</body>
+</html>

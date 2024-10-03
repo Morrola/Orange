@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="form.css">
+    <title>Personal Data Form</title>
+</head>
+<body>
+    <div class="Form-box">
+        <h2>Form</h2>
+        <div class="input-group">
+            <label for="firstname">First Name</label>
+            <input type="text" id="firstname" placeholder="Enter Your First Name">
+            <label for="lastname">Last Name</label>
+            <input type="text" id="lastname" placeholder="Enter Your Last Name">
+            <label for="datebirth">Birth Date</label>
+            <input type="date" id="datebirth" placeholder="Enter Your Date Of Birth">
+            <div id="dob-error" class="error-message">You must be 18 years or older</div><br>
+            <br>
+            <label>Your Gender:</label><br>
+            <div class="Radio">
+            
+            <label for="male">Male</label>
+            <input type="radio">
+            
+            <label for="female">Female</label><br>
+            <input type="radio">
+            </div><br><br>
+            
+            <label for="description">Brief Description:</label>
+            <textarea id="description" name="description" rows="3" placeholder="Describe yourself briefly"></textarea>
+
+            <label for="major">Your Major and University</label>
+            <input type="text" id="major" placeholder="Enter your major and university">
+            <br><br>
+            <label for="languages">Preferred Programming Languages:</label>
+            <div class="checklist">
+                <label for="lang1">JavaScript</label>
+                <input type="checkbox" id="lang1" name="languages" value="JavaScript">
+                <label for="lang2">Python</label>
+                <input type="checkbox" id="lang2" name="languages" value="Python">
+                <label for="lang3">C++</label>
+                <input type="checkbox" id="lang3" name="languages" value="C++">
+                <label for="lang4">Java</label>
+                <input type="checkbox" id="lang4" name="languages" value="Java">
+                <label for="lang5">C#</label>
+                <input type="checkbox" id="lang5" name="languages" value="Ruby">
+                
+            </div>
+        </div>
+<br>
+        <div class="input-group">
+            <label for="email">Email:</label>
+            <input type="text" id="email" placeholder="Enter your email">
+            <div id="email-error" class="error-message">Invalid email format</div>
+        </div>
+        <div class="input-group">
+            <label for="password">Password:</label>
+            <input type="password" id="password" placeholder="Enter your password">
+            <div id="password-error" class="error-message">Password must be at least 8 characters, with at least one uppercase letter, one lowercase letter, and one digit</div>
+        </div>
+        <br>
+        <div class="input-group">
+            <button id="submit-btn" onclick="validateForm()">Submit</button>
+        </div>
+    </div>
+
+    <script src="form.js"></script>
+</body>
+</html>

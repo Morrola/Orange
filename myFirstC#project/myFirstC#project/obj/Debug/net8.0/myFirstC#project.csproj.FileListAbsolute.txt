@@ -1,0 +1,14 @@
+C:\Users\morro\source\repos\myFirstC#project\myFirstC#project\bin\Debug\net8.0\myFirstC#project.exe
+C:\Users\morro\source\repos\myFirstC#project\myFirstC#project\bin\Debug\net8.0\myFirstC#project.deps.json
+C:\Users\morro\source\repos\myFirstC#project\myFirstC#project\bin\Debug\net8.0\myFirstC#project.runtimeconfig.json
+C:\Users\morro\source\repos\myFirstC#project\myFirstC#project\bin\Debug\net8.0\myFirstC#project.dll
+C:\Users\morro\source\repos\myFirstC#project\myFirstC#project\bin\Debug\net8.0\myFirstC#project.pdb
+C:\Users\morro\source\repos\myFirstC#project\myFirstC#project\obj\Debug\net8.0\myFirstC#project.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\morro\source\repos\myFirstC#project\myFirstC#project\obj\Debug\net8.0\myFirstC#project.AssemblyInfoInputs.cache
+C:\Users\morro\source\repos\myFirstC#project\myFirstC#project\obj\Debug\net8.0\myFirstC#project.AssemblyInfo.cs
+C:\Users\morro\source\repos\myFirstC#project\myFirstC#project\obj\Debug\net8.0\myFirstC#project.csproj.CoreCompileInputs.cache
+C:\Users\morro\source\repos\myFirstC#project\myFirstC#project\obj\Debug\net8.0\myFirstC#project.dll
+C:\Users\morro\source\repos\myFirstC#project\myFirstC#project\obj\Debug\net8.0\refint\myFirstC#project.dll
+C:\Users\morro\source\repos\myFirstC#project\myFirstC#project\obj\Debug\net8.0\myFirstC#project.pdb
+C:\Users\morro\source\repos\myFirstC#project\myFirstC#project\obj\Debug\net8.0\myFirstC#project.genruntimeconfig.cache
+C:\Users\morro\source\repos\myFirstC#project\myFirstC#project\obj\Debug\net8.0\ref\myFirstC#project.dll

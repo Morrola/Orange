@@ -1,0 +1,159 @@
+// this are the first 5 exs and their outpot :
+// ex 1)
+unction doubleValues(arr) {
+  return arr.map(value => value * 2);
+}
+console.log(doubleValues([1, 2, 3])); // [2, 4, 6]
+console.log(doubleValues([5, 1, 2, 3, 10]));  // [10, 2, 4, 6, 20]
+
+// ex 2)
+
+function onlyEvenValues(arr) {
+  return arr.filter(value => value % 2 === 0);
+}
+console.log(onlyEvenValues([1, 2, 3])); // [2]
+console.log(onlyEvenValues([5, 1, 2, 3, 10])); // [2, 10]
+
+// ex 3)
+
+function showFirstAndLast(arr) {
+  return arr.map(str => str[0] + str[str.length - 1]);
+}
+console.log(showFirstAndLast(['colt', 'matt', 'tim', 'udemy'])); // ["ct", "mt", "tm", "uy"]
+console.log(showFirstAndLast(['hi', 'goodbye', 'smile'])); // ['hi', 'ge', 'se']
+
+// ex 4)
+
+function addKeyAndValue(arr, key, value) {
+  return arr.map(obj => {
+    obj[key] = value;
+    return obj;
+  });
+}
+console.log(addKeyAndValue(
+  [{ name: 'Elie' }, { name: 'Tim' }, { name: 'Matt' }, { name: 'Colt' }], 
+  'title', 
+  'instructor'
+));
+// [{name: 'Elie', title:'instructor'}, {name: 'Tim', title:'instructor'}, {name: 'Matt', title:'instructor'}, {name: 'Colt', title:'instructor'}]
+
+// ex 5)
+
+function vowelCount(str) {
+  const vowels = 'aeiou';
+  const count = {};
+  str.toLowerCase().split('').forEach(char => {
+    if (vowels.includes(char)) {
+      count[char] = (count[char] || 0) + 1;
+    }
+  });
+  return count;
+}
+console.log(vowelCount('Elie')); // {e:2,i:1}
+console.log(vowelCount('Tim')); // {i:1}
+console.log(vowelCount('Matt')); // {a:1}
+console.log(vowelCount('hmmm')); // {}
+console.log(vowelCount('I Am awesome and so are you')); // {i: 1, a: 4, e: 3, o: 3, u: 1}
+
+//// this r the solves of map exs + the outpot :
+
+// ex 1) 
+
+function doubleNumbers(arr) {
+  return arr.map(num => num * 2);
+}
+console.log(doubleNumbers([2, 5, 100])); // [4, 10, 200]
+
+// ex 2)
+
+function stringItUp(arr) {
+  return arr.map(num => num.toString());
+}
+console.log(stringItUp([2, 5, 100])); // ["2", "5", "100"]
+
+// ex 3)
+
+function capitalizeNames(arr) {
+  return arr.map(name => name.toLowerCase().replace(/^\w/, c => c.toUpperCase()));
+}
+console.log(capitalizeNames(["john", "JACOB", "jinGleHeimer", "schmidt"])); 
+// ["John", "Jacob", "Jingleheimer", "Schmidt"]
+
+// ex 4)
+
+function namesOnly(arr) {
+  return arr.map(person => person.name);
+}
+console.log(namesOnly([
+  { name: "Angelina Jolie", age: 80 },
+  { name: "Eric Jones", age: 2 },
+  { name: "Paris Hilton", age: 5 },
+  { name: "Kayne West", age: 16 },
+  { name: "Bob Ziroll", age: 100 }
+]));
+// ["Angelina Jolie", "Eric Jones", "Paris Hilton", "Kayne West", "Bob Ziroll"]
+
+// ex 5 )
+
+function makeStrings(arr) {
+  return arr.map(person => person.age >= 18 ? `${person.name} can go to The Matrix` : `${person.name} is under age!!`);
+}
+console.log(makeStrings([
+  { name: "Angelina Jolie", age: 80 },
+  { name: "Eric Jones", age: 2 },
+  { name: "Paris Hilton", age: 5 },
+  { name: "Kayne West", age: 16 },
+  { name: "Bob Ziroll", age: 100 }
+]));
+// ["Angelina Jolie can go to The Matrix", "Eric Jones is under age!!", "Paris Hilton is under age!!", "Kayne West is under age!!", "Bob Ziroll can go to The Matrix"]
+
+// ex 6)
+
+function readyToPutInTheDOM(arr) {
+  return arr.map(person => `<h1>${person.name}</h1><h2>${person.age}</h2>`);
+}
+console.log(readyToPutInTheDOM([
+  { name: "Angelina Jolie", age: 80 },
+  { name: "Eric Jones", age: 2 },
+  { name: "Paris Hilton", age: 5 },
+  { name: "Kayne West", age: 16 },
+  { name: "Bob Ziroll", age: 100 }
+]));
+// ["<h1>Angelina Jolie</h1><h2>80</h2>", "<h1>Eric Jones</h1><h2>2</h2>", "<h1>Paris Hilton</h1><h2>5</h2>", "<h1>Kayne West</h1><h2>16</h2>", "<h1>Bob Ziroll</h1><h2>100</h2>"]
+
+// ex 7)
+
+function doubleValues(arr) {
+  return arr.map(num => num * 2);
+}
+console.log(doubleValues([1, 2, 3])); // [2, 4, 6]
+console.log(doubleValues([1, -2, -3])); // [2, -4, -6]
+
+// ex 8)
+
+function valTimesIndex(arr) {
+  return arr.map((num, index) => num * index);
+}
+console.log(valTimesIndex([1, 2, 3])); // [0, 2, 6]
+console.log(valTimesIndex([1, -2, -3])); // [0, -2, -6]
+
+// ex 9)
+
+function extractKey(arr, key) {
+  return arr.map(obj => obj[key]);
+}
+console.log(extractKey([{ name: 'Elie' }, { name: 'Tim' }, { name: 'Matt' }, { name: 'Colt' }], 'name')); 
+// ['Elie', 'Tim', 'Matt', 'Colt']
+
+// ex 10)
+
+function extractFullName(arr) {
+  return arr.map(obj => `${obj.first} ${obj.last}`);
+}
+console.log(extractFullName([
+  { first: 'Elie', last: 'Schoppik' },
+  { first: 'Tim', last: 'Garcia' },
+  { first: 'Matt', last: 'Lane' },
+  { first: 'Colt', last: 'Steele' }
+]));
+// ['Elie Schoppik', 'Tim Garcia', 'Matt Lane', 'Colt Steele']

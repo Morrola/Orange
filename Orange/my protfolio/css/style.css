@@ -1,0 +1,244 @@
+:root {
+    --primaryColor: #0fb085; 
+    --secondaryColor: #90ffc0;
+    --lightcolor: #ffff;
+    --bgcolor-1: #171a1c;
+    --bgcolor-2: #22282a;
+    --padding: 8%;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+
+html {
+    font-family: 'Josefin Sans', sans-serif; 
+    font-size: 16px;
+    color: var(--lightcolor);
+}
+
+.home {
+    width: 100%;
+    height: 100vh;
+    background-color: var(--bgcolor-1);
+    display: flex;
+    flex-direction: column;
+}
+
+span {
+    color: var(--primaryColor); 
+}
+
+h2 {
+    font-size: 2.2rem;
+    letter-spacing: 0.12rem;
+    cursor: pointer;
+    font-weight: 600; 
+}
+
+nav {
+    padding-top: 2.8rem;
+    padding-left: var(--padding);
+    padding-right: var(--padding);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav ul li {
+    list-style-type: none;
+    display: inline-block;
+    margin: 0.8rem 1.5rem;
+}
+
+nav ul li a {
+    color: var(--lightcolor);
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: 0.4s;
+}
+
+nav ul li a:hover {
+    color: var(--secondaryColor);
+}
+
+.btn {
+    background-color: var(--primaryColor); 
+    color: var(--lightcolor);
+    text-decoration: none;
+    font-weight: bold;
+    padding: 0.81rem 1.87rem;
+    border-radius: 30px;
+    border: 2px solid transparent;
+    transition: 0.4s;
+}
+
+.btn:hover {
+    background-color: transparent;
+    border: 2px solid var(--primaryColor); 
+}
+
+ .home .container-texts {
+    position: relative;
+    bottom: 70px;
+}
+
+ .home .content {
+    flex-grow: 1;
+    padding: 0 var(--padding);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+h1 {
+    font-size: 4.65rem;
+    margin: 1.7rem 0;
+}
+
+h3 {
+    font-size: 1.5rem;
+    margin-bottom: 3rem;
+}
+
+h4 {
+    font-size: 1.25rem;
+    letter-spacing: 0.12rem;
+    color: #8effe1;
+}
+
+.social {
+    margin-top: 3.5rem;
+}
+
+.social img {
+    margin-right: 2em;
+    width: 2.5rem;
+    transition: 0.4s;
+}
+
+.social img:hover {
+    transform: scale(1.5, 1.5);
+}
+
+.home .container-imgs {
+    width: 45%;
+    height: 90%;
+    position: relative;
+    align-self: flex-end;
+}
+
+.home .container-imgs img {
+
+    position: absolute;
+    bottom: 0;
+    left: 0; 
+    height: 100%;
+    transition: bottom 0.5s ease, left 0.5s ease; 
+}
+
+
+.home .container-imgs img:hover {
+    bottom: 10px; 
+    left: 10px; 
+}
+
+.shape {
+    bottom: 40px;
+}
+.about {
+    background-color: var(--bgcolor-2);
+    padding: 2rem var(--padding);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.about .container-img img {
+    width: 55%;
+
+}
+.about .container-texts {
+    width: 75%;
+}
+p {
+    color: var(--secondaryColor);
+    letter-spacing: 1px;
+    line-height: 1.8rem;
+    font-size: 1rem;
+}
+h5 {
+    font-size: 1.37rem;
+    margin-bottom: 1.5rem;
+    letter-spacing: 2px;
+}
+.services {
+   background-color: var(--bgcolor-1); 
+   padding: 2rem var(--padding);
+}
+.text-center {
+    text-align: center;
+}
+.box {
+    display: flex;
+    justify-content: space-between;
+}
+.card {
+    width: 300px;
+    background:var(--bgcolor-2);
+    border-radius: 20px;
+    padding: 1.3rem 2rem;
+    text-align: center;
+    justify-items:flex-start;
+}
+.card i {
+    font-size: 3.12rem;
+    text-align: center;
+    color: var(--primaryColor);
+    margin: 2rem;
+    justify-items: flex-end;
+    
+}
+.skills {
+    background-color: var(--bgcolor-2);
+    padding: 2rem var(--padding);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.skills .container-img{
+    width: 35%;
+}
+.skills .container-img img {
+    width: 95%;
+}
+.skills .container-skills {
+    width: 40%;
+}
+
+.skills .container-texts {
+    width: 75%;
+}
+.content-skill {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 4rem;
+}
+.skill {
+    width: 100px;
+    height: 10px;
+    background:var(--lightcolor);
+    border-radius: 50%;
+    margin: 0 2rem 2rem 0;
+    display: flex;
+    align-items: center;
+    justify-content:center ;
+}
+.skill img {
+width: 70%;
+}
+.card:hover {
+    transform: scale(1.1, 1.1);
+}

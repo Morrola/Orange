@@ -1,0 +1,48 @@
+// In this dropdown menu, you should add a set of country names. When a specific country is selected, its corresponding flag should be displayed.
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Country Flags</title>
+    <style>
+        #flag {
+            margin-top: 20px;
+            width: 200px;
+            height: auto;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <label for="countries">Select a country:</label>
+    <select id="countries">
+        <option value="">--Select a Country--</option>
+        <option value="norway">Norway</option>
+        <option value="germany">Germany</option>
+        <option value="usa">USA</option>
+    </select>
+
+    <img id="flag" src="" alt="Country Flag">
+
+    <script>
+        const countryFlags = {
+            norway: 'https://upload.wikimedia.org/wikipedia/commons/d/d9/Flag_of_Norway.svg',
+            germany: 'https://upload.wikimedia.org/wikipedia/en/b/ba/Flag_of_Germany.svg',
+            usa: 'https://upload.wikimedia.org/wikipedia/en/a/a4/Flag_of_the_United_States.svg'
+        };
+
+        document.getElementById('countries').addEventListener('change', function () {
+            const selectedCountry = this.value;
+            const flag = document.getElementById('flag');
+            if (countryFlags[selectedCountry]) {
+                flag.src = countryFlags[selectedCountry];
+                flag.style.display = 'block';
+            } else {
+                flag.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,64 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f4f4f4;
+}
+.Form-box {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    width: 600px;
+}
+.Form-box h2 {
+    margin-bottom: 20px;
+    text-align: center;
+}
+.input-group {
+    margin-bottom: 0;
+    margin-top: 0;
+    justify-content: space-between;
+
+}
+.input-group label {
+    display: block;
+    margin-bottom: 0;
+}
+.input-group input, .input-group textarea {
+    width: 400px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+.input-group button {
+    width: 100px;
+    padding: 10px;
+    background-color: #ff0062;
+    border: none;
+    color: white;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: 0.4s;
+}
+.input-group button:hover {
+    transform: scale(1.1, 1.1);
+}
+.error-message {
+    color: red;
+    font-size: 14px;
+    margin-top: 5px;
+    display: none;
+}
+.Radio {
+ 
+display: flex;
+
+}
+.checklist {
+    display: flex;
+    margin-top: 2rem;
+}

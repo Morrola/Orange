@@ -1,0 +1,26 @@
+/*
+When hovering with the mouse, the background should turn yellow, and the text should become bold.
+  */
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hover Event</title>
+    <style>
+        .hover-text {
+            padding: 20px;
+            font-size: 24px;
+            transition: all 0.3s ease;
+        }
+        .hover-text:hover {
+            background-color: yellow;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="hover-text">Hello world!</div>
+</body>
+</html>

@@ -1,0 +1,62 @@
+// he user should be able to show and hide the content as needed.
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Show/Hide Content</title>
+    <style>
+        .content {
+            display: none;
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin: 10px 0;
+        }
+        .toggle-button {
+            color: blue;
+            cursor: pointer;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <h3>What is Lorem Ipsum?</h3>
+    <span class="toggle-button" onclick="toggleContent('content1')">Show</span>
+    <div id="content1" class="content">
+        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry...</p>
+        <span class="toggle-button" onclick="toggleContent('content1')">Hide</span>
+    </div>
+
+    <h3>Why do we use it?</h3>
+    <span class="toggle-button" onclick="toggleContent('content2')">Show</span>
+    <div id="content2" class="content">
+        <p>It is a long established fact that a reader will be distracted by the readable content...</p>
+        <span class="toggle-button" onclick="toggleContent('content2')">Hide</span>
+    </div>
+
+    <h3>Where does it come from?</h3>
+    <span class="toggle-button" onclick="toggleContent('content3')">Show</span>
+    <div id="content3" class="content">
+        <p>Contrary to popular belief, Lorem Ipsum is not simply random text...</p>
+        <span class="toggle-button" onclick="toggleContent('content3')">Hide</span>
+    </div>
+
+    <script>
+        function toggleContent(id) {
+            const content = document.getElementById(id);
+            const button = content.previousElementSibling;
+            
+            if (content.style.display === "none") {
+                content.style.display = "block";
+                button.textContent = "Hide";
+            } else {
+                content.style.display = "none";
+                button.textContent = "Show";
+            }
+        }
+    </script>
+
+</body>
+</html>
