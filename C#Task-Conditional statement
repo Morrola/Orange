@@ -1,0 +1,163 @@
+// Q1}
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace testing_topics
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+
+            Console.WriteLine("Enter the first integer number:");
+            int Int1 =int.Parse(Console.ReadLine());
+
+            Console.WriteLine("Enter the second integer number");
+            int Int2 =int.Parse(Console.ReadLine());
+            Console.WriteLine();
+            if (Int1 > Int2)
+            {
+                Console.WriteLine("The small num is: "+Int2+"\n");
+            }
+            else
+            {
+                Console.WriteLine("The small num is: "+Int1+"\n");
+            }
+            Console.WriteLine();
+        }
+    }
+}
+
+// Q2)
+
+        while (true)
+        {
+            Console.WriteLine("Enter a number :");
+            Console.WriteLine();
+            int sign = int.Parse(Console.ReadLine());
+            if (sign > 0)
+            {
+                Console.WriteLine("The sign is +");
+            }
+            else if (sign < 0) 
+            {
+                Console.WriteLine("The sign is -");
+            }
+          
+            
+        }
+
+// Q3) 
+
+ int[] max = new int[6];
+ Console.WriteLine("Enter 6 numbers randomly");
+ for (int i = 0; i < max.Length; i++)
+ {
+     max[i] = int.Parse(Console.ReadLine());
+ }
+ int maximum = max.Max();
+ Console.WriteLine("The max is :"+maximum);
+
+
+ // Q4)
+
+ Console.WriteLine("Enter kilometers per hour :");
+ double kilometers = double.Parse(Console.ReadLine());
+ double mils = kilometers / 1.609;
+ Console.WriteLine(kilometers + " kilometers it is = " + mils+ " mils per hour");
+
+// Q5)
+
+Console.WriteLine("Enter Hours and Minutes");
+ float time = float.Parse(Console.ReadLine());
+float Minutes = time * 60;
+ Console.WriteLine(time+" Hours it is = "+Minutes+" Minutes");
+
+// Q6)
+
+ Console.WriteLine("Enter Hours :");
+ float Hours = float.Parse(Console.ReadLine());
+ Console.WriteLine("Enter minutes :");
+ float Minutes =float.Parse(Console.ReadLine()); 
+float Min = Hours * 60;
+ Console.WriteLine("The total is : " +(Min+Minutes)+" Minutes");
+
+// Q7)
+
+nsole.WriteLine("Enter minutes :");
+            int Total =int.Parse(Console.ReadLine());
+
+            int Hours = Total / 60;
+            int Minutes = Total % 60 ;
+            
+            Console.WriteLine("The total is : " +Hours+ " Hours ," +Minutes+" Minutes");
+
+// Q8)
+
+for (int i = 0; i < arr.Length; i++)
+{
+    Console.WriteLine($"Enter sentence {i + 1}:");
+    arr[i] = Console.ReadLine();
+}
+
+
+int fixedLength = 30;
+
+Console.WriteLine("******************");
+foreach (string sentence in arr)
+{
+ 
+    if (sentence.Length > fixedLength)
+    {
+        Console.WriteLine(sentence.Substring(0, fixedLength));
+    }
+    else
+    {
+        Console.WriteLine(sentence.PadRight(fixedLength));
+    }
+
+    Console.WriteLine();
+}
+
+// Q9)
+
+    string[] arr = new string[5];
+
+
+    Console.WriteLine(ReverseOdd("Bananas"));
+    Console.WriteLine(ReverseOdd("One two three four"));
+}
+
+// دالة تقوم بعكس الكلمات ذات الطول الفردي فقط
+static string ReverseOdd(string input)
+{
+    // تقسيم الجملة إلى كلمات
+    string[] words = input.Split(' ');
+
+    // حلقة تمر على كل كلمة في الجملة
+    for (int i = 0; i < words.Length; i++)
+    {
+        // إذا كانت الكلمة ذات طول فردي، نقوم بعكسها
+        if (words[i].Length % 2 != 0)
+        {
+            words[i] = ReverseString(words[i]);
+        }
+    }
+
+    // جمع الكلمات مرة أخرى في جملة واحدة
+    return string.Join(" ", words);
+}
+
+// دالة تقوم بعكس النصوص
+static string ReverseString(string word)
+{
+    char[] charArray = word.ToCharArray();
+    Array.Reverse(charArray);
+    return new string(charArray);
+    // هذا شرح مفصب للطريقة
+    //اكيد في اكثر من طريقة , بس هاي الي قدرت عليها ويدوب فاهمها صراحة
+}
