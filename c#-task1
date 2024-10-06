@@ -1,0 +1,72 @@
+// The code collects user information (name, ID, GPA,
+// graduation status, and gender) and stores it in a list.
+// After gathering the data, it prints out all the information for each user.
+using System;
+using System.Collections.Generic;
+
+namespace testing_topics
+{
+    internal class Program
+    {
+       
+        class UserInfo
+        {
+            public string Name { get; set; }
+            public int ID { get; set; }
+            public double GBA { get; set; }
+            public bool Graduate { get; set; }
+            public char Gender { get; set; }
+        }
+
+        static void Main(string[] args)
+        {
+           
+            List<UserInfo> userList = new List<UserInfo>();
+
+            while (true)
+            {
+                Console.WriteLine("Enter Your Information");
+
+                Console.WriteLine("Name:");
+                string name = Console.ReadLine();
+
+                Console.WriteLine("Your ID:");
+                int id = int.Parse(Console.ReadLine());
+
+                Console.WriteLine("Your GBA:");
+                double gba = double.Parse(Console.ReadLine());
+
+                Console.WriteLine("Graduated? (true/false):");
+                bool graduate = bool.Parse(Console.ReadLine());
+
+                Console.WriteLine("Gender (M/F):");
+                char gender = char.Parse(Console.ReadLine());
+
+              
+                userList.Add(new UserInfo
+                {
+                    Name = name,
+                    ID = id,
+                    GBA = gba,
+                    Graduate = graduate,
+                    Gender = gender
+                });
+
+               
+                Console.WriteLine("Do you want to add another user? (yes/no):");
+                string choice = Console.ReadLine();
+                if (choice.ToLower() == "no")
+                {
+                    break;
+                }
+            }
+
+            
+            Console.WriteLine("\n--- User Information List ---");
+            foreach (var user in userList)
+            {
+                Console.WriteLine($"Name: {user.Name}, ID: {user.ID}, GBA: {user.GBA}, Graduated: {user.Graduate}, Gender: {user.Gender}");
+            }
+        }
+    }
+}
