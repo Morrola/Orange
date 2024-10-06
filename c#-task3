@@ -15,6 +15,7 @@ namespace testing_topics
             for (int i = 0; i < num.Length; i++)
             {
                 num[i] = int.Parse(Console.ReadLine());
+                 Console.Write($"element - {i} : ");
             }
             Console.WriteLine("\nElements in array are:");
             foreach (int element in num)
