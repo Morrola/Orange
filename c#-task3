@@ -1,0 +1,26 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace testing_topics
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            int[] num = new int[3];
+            Console.WriteLine("Enter 3 elements");
+            for (int i = 0; i < num.Length; i++)
+            {
+                num[i] = int.Parse(Console.ReadLine());
+            }
+            Console.WriteLine("\nElements in array are:");
+            foreach (int element in num)
+            {
+                Console.Write(element + " ");
+            }
+        }
+    }
+}
