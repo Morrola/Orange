@@ -1,0 +1,38 @@
+// Q1)
+Console.WriteLine("MyClass class has initialized!");
+// Q2)
+string name = "Scott";
+Console.WriteLine($"Hello All I am {name}");
+// Q3)
+int number = int.Parse(Console.ReadLine());
+int factorial = 1;
+
+for (int i = 1; i <= number; i++)
+{
+    factorial *= i;
+}
+
+Console.WriteLine(factorial);
+// Q4)
+int[] array = { 11, -2, 4, 35, 0, 8, -9 };
+Array.Sort(array);
+
+foreach (int num in array)
+{
+    Console.Write(num + " ");
+}
+// Q5)
+DateTime date1 = new DateTime(1981, 11, 3);
+DateTime date2 = new DateTime(2013, 9, 4);
+TimeSpan difference = date2 - date1;
+
+DateTime diffDate = DateTime.MinValue + difference;
+int years = diffDate.Year - 1;
+int months = diffDate.Month - 1;
+int days = diffDate.Day - 1;
+
+Console.WriteLine($"Difference: {years} years {months} months {days} days");
+// Q6)
+string dateString = "12-08-2004";
+DateTime date = DateTime.ParseExact(dateString, "dd-MM-yyyy", null);
+Console.WriteLine($"Converted Date: {date.ToString("yyyy-MM-dd")}");
