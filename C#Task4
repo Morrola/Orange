@@ -1,0 +1,103 @@
+// Q1)
+int[] numbers = new int[10];
+int sum = 0;
+
+for (int i = 0; i < 10; i++)
+{
+    numbers[i] = int.Parse(Console.ReadLine());
+    sum += numbers[i];
+}
+
+double average = (double)sum / 10;
+
+Console.WriteLine($"The sum of 10 numbers is: {sum}");
+Console.WriteLine($"The average is: {average}");
+
+// Q2)
+
+int n = int.Parse(Console.ReadLine());
+
+for (int i = 1; i <= n; i++)
+{
+    Console.WriteLine($"Number is : {i} and cube of the {i} is : {i * i * i}");
+}
+
+// Q3)
+int[] years = { 1763, 1972, 1925, 1916, 1984, 1124, 1950, 2020 };
+var filteredYears = years.Where(y => y > 1950).ToArray();
+
+foreach (var year in filteredYears)
+{
+    Console.WriteLine(year);
+}
+// Q4)
+int ageInYears = int.Parse(Console.ReadLine());
+int ageInDays = ageInYears * 365;
+Console.WriteLine(ageInDays);
+// Q5)
+int chickens = 2, cows = 3, pigs = 5;
+int totalLegs = chickens * 2 + cows * 4 + pigs * 4;
+Console.WriteLine(totalLegs);
+// Q6)
+string[] validUsers = { "user1", "user2", "user3" };
+string[] validPasswords = { "pass1", "pass2", "pass3" };
+
+string username = Console.ReadLine();
+string password = Console.ReadLine();
+
+if (validUsers.Contains(username) && validPasswords.Contains(password))
+{
+    Console.WriteLine("Pass");
+}
+else
+{
+    Console.WriteLine("Fail");
+}
+// Q7)
+int baseNum = int.Parse(Console.ReadLine());
+int power = int.Parse(Console.ReadLine());
+int result = (int)Math.Pow(baseNum, power);
+Console.WriteLine(result);
+// Q8)
+int year = int.Parse(Console.ReadLine());
+
+if (year >= 1900 && year <= 2024 && (year % 4 == 0 && (year % 100 != 0 || year % 400 == 0)))
+{
+    Console.WriteLine($"{year} is a leap year.");
+}
+else
+{
+    Console.WriteLine($"{year} is not a leap year.");
+}
+// Q9)
+int number = int.Parse(Console.ReadLine());
+bool isPrime = true;
+
+if (number <= 1)
+    isPrime = false;
+
+for (int i = 2; i <= Math.Sqrt(number); i++)
+{
+    if (number % i == 0)
+    {
+        isPrime = false;
+        break;
+    }
+}
+
+Console.WriteLine(isPrime ? "Prime" : "Not Prime");
+// Q10)
+string sentence = Console.ReadLine();
+int wordCount = 0;
+
+for (int i = 0; i < sentence.Length; i++)
+{
+    if (i == 0 || (sentence[i] != ' ' && sentence[i - 1] == ' '))
+    {
+        wordCount++;
+    }
+}
+
+Console.WriteLine(wordCount);
+
+
