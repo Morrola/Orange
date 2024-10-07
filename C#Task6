@@ -1,0 +1,83 @@
+// Q1)
+public class Car
+{
+    public string Make { get; set; }
+    public int Year { get; set; }
+    public string Type { get; set; }
+    public decimal Price { get; set; }
+    public string Model { get; set; }
+    public string PalletNo { get; set; }
+    public string Color { get; set; }
+
+    public Car(string make, int year, string type, decimal price, string model, string palletNo, string color)
+    {
+        Make = make;
+        Year = year;
+        Type = type;
+        Price = price;
+        Model = model;
+        PalletNo = palletNo;
+        Color = color;
+    }
+
+    public string StartEngine()
+    {
+        return "Engine started.";
+    }
+
+    public string StopEngine()
+    {
+        return "Engine stopped.";
+    }
+
+    public string GetCarInfo()
+    {
+        return $"Car: {Make}, Year: {Year}, Type: {Type}, Price: {Price}, Model: {Model}, Pallet No: {PalletNo}, Color: {Color}";
+    }
+}
+// Q2)
+public class TestCar
+{
+    public static void Main()
+    {
+        Car myCar = new Car("Toyota", 2020, "SUV", 30000, "RAV4", "P123456", "Red");
+
+        Console.WriteLine(myCar.GetCarInfo());
+        Console.WriteLine(myCar.StartEngine());
+        Console.WriteLine(myCar.StopEngine());
+    }
+}
+// Q3)
+public class Vehicle
+{
+    public string Manufacturer { get; set; }
+
+    public Vehicle(string manufacturer)
+    {
+        Manufacturer = manufacturer;
+    }
+}
+
+public class Car : Vehicle
+{
+    public string Model { get; set; }
+
+    public Car(string manufacturer, string model) : base(manufacturer)
+    {
+        Model = model;
+    }
+
+    public string GetCarDetails()
+    {
+        return $"Manufacturer: {Manufacturer}, Model: {Model}";
+    }
+}
+
+public class TestCar
+{
+    public static void Main()
+    {
+        Car myCar = new Car("Ford", "Mustang");
+        Console.WriteLine(myCar.GetCarDetails());
+    }
+}
