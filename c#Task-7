@@ -1,0 +1,36 @@
+using System;
+using System.IO;
+
+class Program
+{
+    static void Main()
+    {
+        
+        string filePath = "info.txt";
+
+        
+        string infoText = "ChatGPT\nSpecialization: AI and natural language processing\nAge: Not applicable\nDescription: I am an AI developed by OpenAI, designed to assist in a wide range of fields, especially in understanding and generating human-like text.";
+
+        // Write the information to the file
+        File.WriteAllText(filePath, infoText);
+
+      
+        int totalCharsNoSpaces = 0;
+        int totalWords = 0;
+
+       
+        string[] lines = File.ReadAllLines(filePath);
+        foreach (string line in lines)
+        {
+           
+            totalCharsNoSpaces += line.Replace(" ", "").Length;
+
+            
+            totalWords += line.Split(new[] { ' ', '\n' }, StringSplitOptions.RemoveEmptyEntries).Length;
+        }
+
+    
+        Console.WriteLine($"Total characters (excluding spaces): {totalCharsNoSpaces}");
+        Console.WriteLine($"Total words: {totalWords}");
+    }
+}
