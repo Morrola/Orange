@@ -1,0 +1,57 @@
+// Create the customers Table
+CREATE TABLE customers (
+    customer_id INT AUTO_INCREMENT PRIMARY KEY,
+    first_name VARCHAR(50),
+    last_name VARCHAR(50),
+    email VARCHAR(100),
+    phone VARCHAR(20),
+    address VARCHAR(255),
+    city VARCHAR(50),
+    country VARCHAR(50)
+);
+// Create the orders Table
+CREATE TABLE orders (
+    order_id INT AUTO_INCREMENT PRIMARY KEY,
+    customer_id INT,
+    order_date DATE,
+    total_amount DECIMAL(10, 2),
+    status VARCHAR(50),
+    FOREIGN KEY (customer_id) REFERENCES customers(customer_id)
+);
+// Create the products Table
+CREATE TABLE products (
+    product_id INT AUTO_INCREMENT PRIMARY KEY,
+    product_name VARCHAR(100),
+    price DECIMAL(10, 2),
+    quantity_in_stock INT
+);
+// Create the employees Table
+CREATE TABLE employees (
+    employee_id INT AUTO_INCREMENT PRIMARY KEY,
+    first_name VARCHAR(50),
+    last_name VARCHAR(50),
+    email VARCHAR(100),
+    position VARCHAR(50),
+    hire_date DATE
+);
+// Insert Data into customers Table
+INSERT INTO customers (first_name, last_name, email, phone, address, city, country) 
+VALUES
+('John', 'Doe', 'johndoe@example.com', '123-456-7890', '123 Main St', 'New York', 'USA'),
+('Jane', 'Smith', 'janesmith@example.com', '987-654-3210', '456 Oak Ave', 'Los Angeles', 'USA');
+// Insert Data into orders Table
+INSERT INTO orders (customer_id, order_date, total_amount, status)
+VALUES
+(1, '2024-10-20', 150.50, 'Shipped'),
+(2, '2024-10-19', 85.00, 'Processing');
+//  Insert Data into products Table
+INSERT INTO products (product_name, price, quantity_in_stock)
+VALUES
+('Laptop', 1200.99, 50),
+('Headphones', 150.25, 200);
+// Insert Data into employees Table
+INSERT INTO employees (first_name, last_name, email, position, hire_date)
+VALUES
+('Alice', 'Johnson', 'alice.johnson@example.com', 'Manager', '2022-01-15'),
+('Bob', 'Williams', 'bob.williams@example.com', 'Sales Representative', '2023-05-22');
+
