@@ -1,0 +1,165 @@
+// users table 
+CREATE TABLE users (
+    user_id INT AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(50),
+    email VARCHAR(100),
+    phone VARCHAR(20),
+    password VARCHAR(255),
+    profile_picture VARCHAR(255)
+);
+// message table
+CREATE TABLE messages (
+    message_id INT AUTO_INCREMENT PRIMARY KEY,
+    sender_id INT,
+    receiver_id INT,
+    message_content TEXT,
+    sent_time TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (sender_id) REFERENCES users(user_id),
+    FOREIGN KEY (receiver_id) REFERENCES users(user_id)
+);
+// services table
+CREATE TABLE services (
+    service_id INT AUTO_INCREMENT PRIMARY KEY,
+    service_name VARCHAR(100),
+    service_description TEXT,
+    service_price DECIMAL(10, 2)
+);
+// users_services table
+CREATE TABLE user_services (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    user_id INT,
+    service_id INT,
+    purchase_date DATE,
+    FOREIGN KEY (user_id) REFERENCES users(user_id),
+    FOREIGN KEY (service_id) REFERENCES services(service_id)
+);
+// paymentstable
+CREATE TABLE payments (
+    payment_id INT AUTO_INCREMENT PRIMARY KEY,
+    user_id INT,
+    service_id INT,
+    payment_date DATE,
+    amount DECIMAL(10, 2),
+    FOREIGN KEY (user_id) REFERENCES users(user_id),
+    FOREIGN KEY (service_id) REFERENCES services(service_id)
+);
+INSERT INTO users (username, email, phone, password, profile_picture) 
+VALUES 
+('alice', 'alice@example.com', '123-456-7890', 'password1', 'alice.jpg'),
+('bob', 'bob@example.com', '234-567-8901', 'password2', 'bob.jpg'),
+('charlie', 'charlie@example.com', '345-678-9012', 'password3', 'charlie.jpg'),
+('david', 'david@example.com', '456-789-0123', 'password4', 'david.jpg'),
+('eva', 'eva@example.com', '567-890-1234', 'password5', 'eva.jpg'),
+('frank', 'frank@example.com', '678-901-2345', 'password6', 'frank.jpg');
+
+INSERT INTO messages (sender_id, receiver_id, message_content)
+VALUES 
+(1, 2, 'Hello Bob!'),
+(2, 1, 'Hi Alice!'),
+(3, 4, 'Charlie here!'),
+(4, 3, 'David replying to Charlie'),
+(5, 6, 'Eva sending a message to Frank'),
+(6, 5, 'Frank responding to Eva');
+INSERT INTO services (service_name, service_description, service_price)
+VALUES 
+('Premium Messaging', 'Send unlimited messages', 9.99),
+('Ad-free Experience', 'Remove all ads from the app', 4.99),
+('Cloud Backup', 'Back up your messages to the cloud', 2.99),
+('Custom Emojis', 'Use custom emojis in chat', 1.99),
+('Group Video Call', 'Video chat with up to 10 people', 5.99),
+('Priority Support', 'Get priority customer support', 7.99);
+
+INSERT INTO user_services (user_id, service_id, purchase_date)
+VALUES 
+(1, 1, '2024-10-01'),
+(2, 2, '2024-10-02'),
+(3, 3, '2024-10-03'),
+(4, 4, '2024-10-04'),
+(5, 5, '2024-10-05'),
+(6, 6, '2024-10-06');
+
+
+INSERT INTO payments (user_id, service_id, payment_date, amount)
+VALUES 
+(1, 1, '2024-10-01', 9.99),
+(2, 2, '2024-10-02', 4.99),
+(3, 3, '2024-10-03', 2.99),
+(4, 4, '2024-10-04', 1.99),
+(5, 5, '2024-10-05', 5.99),
+(6, 6, '2024-10-06', 7.99);
+
+
+UPDATE users
+SET phone = '999-999-9999'
+WHERE user_id = 1;
+
+UPDATE users
+SET username = 'charles'
+WHERE user_id = 3;
+
+
+UPDATE messages
+SET message_content = 'Hello again Bob!'
+WHERE message_id = 1;
+
+UPDATE messages
+SET message_content = 'Frank changed the message.'
+WHERE message_id = 6;
+
+
+UPDATE services
+SET service_price = 12.99
+WHERE service_id = 1;
+
+UPDATE services
+SET service_description = 'Use priority support anytime!'
+WHERE service_id = 6;
+
+
+UPDATE user_services
+SET purchase_date = '2024-09-30'
+WHERE id = 1;
+
+UPDATE user_services
+SET service_id = 3
+WHERE id = 2;
+
+
+UPDATE payments
+SET amount = 10.99
+WHERE payment_id = 1;
+
+UPDATE payments
+SET payment_date = '2024-09-29'
+WHERE payment_id = 2;
+
+
+DELETE FROM users WHERE user_id = 5;
+DELETE FROM users WHERE user_id = 6;
+
+
+DELETE FROM messages WHERE message_id = 5;
+DELETE FROM messages WHERE message_id = 6;
+
+
+DELETE FROM services WHERE service_id = 5;
+DELETE FROM services WHERE service_id = 6;
+
+
+DELETE FROM user_services WHERE id = 5;
+DELETE FROM user_services WHERE id = 6;
+
+
+DELETE FROM payments WHERE payment_id = 5;
+DELETE FROM payments WHERE payment_id = 6;
+
+
+RENAME TABLE user_services TO purchased_services;
+
+
+RENAME TABLE payments TO transactions;
+
+
+ALTER TABLE users CHANGE email user_email VARCHAR(150);
+
+ALTER TABLE services CHANGE service_price price DECIMAL(8, 2);
