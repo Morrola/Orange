@@ -1,0 +1,58 @@
+// employees Table
+CREATE TABLE employees (
+    employee_id INT AUTO_INCREMENT PRIMARY KEY,
+    first_name VARCHAR(50),
+    last_name VARCHAR(50),
+    birthdate DATE,
+    phone VARCHAR(20),
+    national_id VARCHAR(20),
+    nationality VARCHAR(50),
+    marital_status VARCHAR(20),
+    personal_photo VARCHAR(255),
+    entry_date DATE,
+    password VARCHAR(255),
+    department_id INT,
+    FOREIGN KEY (department_id) REFERENCES departments(department_id)
+);
+// departments Table
+CREATE TABLE departments (
+    department_id INT AUTO_INCREMENT PRIMARY KEY,
+    department_name VARCHAR(100)
+);
+// tasks Table
+CREATE TABLE tasks (
+    task_id INT AUTO_INCREMENT PRIMARY KEY,
+    task_title VARCHAR(100),
+    task_description TEXT,
+    start_date DATE,
+    due_date DATE,
+    importance_level ENUM('Low', 'Medium', 'High'),
+    employee_id INT,
+    FOREIGN KEY (employee_id) REFERENCES employees(employee_id)
+);
+// feedback Table
+CREATE TABLE feedback (
+    feedback_id INT AUTO_INCREMENT PRIMARY KEY,
+    sender_email VARCHAR(100),
+    message TEXT,
+    sent_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+//  Insert Sample Data
+// Departments Table
+INSERT INTO departments (department_name)
+VALUES ('Human Resources'), ('Sales'), ('IT'), ('Marketing');
+//Employees Table
+INSERT INTO employees (first_name, last_name, birthdate, phone, national_id, nationality, marital_status, personal_photo, entry_date, password, department_id)
+VALUES 
+('Alice', 'Johnson', '1985-06-15', '123-456-7890', 'A123456', 'American', 'Single', 'alice.jpg', '2022-01-10', 'password123', 1),
+('Bob', 'Williams', '1990-09-23', '987-654-3210', 'B987654', 'British', 'Married', 'bob.jpg', '2023-03-05', 'password456', 2);
+// Tsaks Table
+INSERT INTO tasks (task_title, task_description, start_date, due_date, importance_level, employee_id)
+VALUES
+('Prepare Monthly Report', 'Create and submit the monthly report for the HR department', '2024-10-01', '2024-10-31', 'High', 1),
+('Client Follow-Up', 'Follow up with clients and update their status in the CRM', '2024-10-10', '2024-10-20', 'Medium', 2);
+// Feedback Table
+INSERT INTO feedback (sender_email, message)
+VALUES
+('client@example.com', 'I am having issues accessing my account.'),
+('john.doe@example.com', 'Can you provide more details about your services?');
